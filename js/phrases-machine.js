@@ -130,6 +130,7 @@ var hints = 3;
 var difficulty;
 var phrase;
 
+$("h1").fitText(1, { maxFontSize: '90px' });
 
 $("input[type='submit']").click(function(){
 	check_guess();
