@@ -178,23 +178,28 @@ function setNewPhrase() {
 
 	$("input").first().focus();
 
-	$("input").keyup(function(e) {
-		if (e.which == 13) { // enter
-			check_guess();
-		} else if (e.which == 8) { // backspace
+	$('input:not([type="submit"]):not([type="button"])').keydown(function(e) {
+		if (e.which == 8) { // backspace
+			$(this).val("");
 			var element = $(this).prev('input');
 			while (element.prop('disabled')) {
 				element = element.prev('input');
 			}
 			element.focus();
 			$(element).val("");
-		} else { // push to next element
+		} else if (e.which == 13) { // enter
+			check_guess();
+		} else {
+			// push to next element
+			$(this).val(String.fromCharCode(e.which));
 			var element = $(this).next('input');
 			while (element.prop('disabled')) {
 				element = element.next('input');
 			}
 			element.focus();
 		}
+
+		return false;
 	});
 
 	$('input:not([type="submit"]):not([type="button"])').on('click', function() {
