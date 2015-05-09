@@ -1,0 +1,70 @@
+body {
+	background-color: rgb(107, 219, 207);
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Bevan', cursive;
+	font-size: 7em;
+	color: rgb(240, 240, 240);
+	text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.17);
+	font-weight: normal;
+}
+
+h2 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2em;
+}
+
+input {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2em;
+	width: 1em;
+	background-color: rgb(107, 219, 207);
+	border: none;
+	border-bottom: solid 3px rgb(240, 240, 240);
+	padding-bottom: 5px;
+	text-align: center;
+	margin: 3px;
+}
+
+input[disabled] {
+	font-weight: bold;
+	border-bottom: none;
+}
+
+input[type="submit"] {
+	width: initial;
+	margin: 1em;
+	border: none;
+	background-color: rgb(240, 240, 240);
+	padding: 0.5em 1em;
+	font-weight: bold;
+}
+
+input[type="submit"]:hover {
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+#difficulty {
+	font-family: 'Roboto Slab', serif;
+	font-size: 3em;
+	background-color: rgb(240, 240, 240);
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	border-radius: 2em;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.17);
+}
+
+#score {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2em;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
