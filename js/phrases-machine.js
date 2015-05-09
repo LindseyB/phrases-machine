@@ -126,6 +126,8 @@ var phrases = [
 ];
 
 var points = 0;
+var hints = 3;
+var difficulty;
 var phrase;
 
 
@@ -133,17 +135,40 @@ $("input[type='submit']").click(function(){
 	check_guess();
 });
 
+$("input[type='button']").click(function(){
+	if(hints > 0){
+		hints--;
+		difficulty -= (Math.floor(phrase.difficulty/3) + 1);
+
+		if(difficulty <= 0) { difficulty = 1; }
+
+		$('#difficulty').text(difficulty);
+		$('#hints-display').text(hints);
+
+		var letters = _.sample($('input:not([type="submit"]):not([type="button"]):not([disabled])'), phrase.english.length/3);
+		_.each(letters, function(letter){
+			$(letter).val(phrase.english.charAt($(letter).data('index')));
+			letter.disabled = true;
+		});
+	}
+});
+
 function setNewPhrase() {
 	phrase = _.sample(phrases);
+	difficulty = phrase.difficulty;
+	hints = 3;
 
 	$('h2').text(phrase.translation);
 	$('#difficulty').text(phrase.difficulty);
+	$('#hints-display').text(hints);
 	$("#main").text("");
 	$("input").first().focus();
 
-	_.each(phrase.english, function(chr){
+	_.each(phrase.english, function(chr, index){
 		var input = document.createElement("input");
 		$(input).attr("maxlength", '1');
+		$(input).data("index", index);
+
 		if (/[^\w]/.test(chr)) {
 			input.value = chr;
 			input.disabled = true;
@@ -170,26 +195,22 @@ function setNewPhrase() {
 		}
 	});
 
-	$("input").on('click', function() {
+	$('input:not([type="submit"]):not([type="button"])').on('click', function() {
 	    this.value = '';
 	});
 }
 
 function check_guess() {
 	var solved = true;
-	var index = 0;
-	$("input").each(function(){
+	$('input:not([type="submit"]):not([type="button"])').each(function(index){
 
 		if (index == phrase.english.length) { return; }
-
 
 		if(this.value.toLowerCase() == phrase.english.charAt(index).toLowerCase()) {
 			this.disabled = true;
 		} else {
 			solved = false;
 		}
-
-		index++;
 	});
 
 	if(solved) {

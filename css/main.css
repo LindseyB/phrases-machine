@@ -33,7 +33,7 @@ input[disabled] {
 	border-bottom: none;
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
 	width: initial;
 	margin: 1em;
 	border: none;
@@ -42,7 +42,7 @@ input[type="submit"] {
 	font-weight: bold;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="button"]:hover {
 	background-color: #ccc;
 	cursor: pointer;
 }
@@ -61,7 +61,7 @@ input[type="submit"]:hover {
 	box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.17);
 }
 
-#score {
+#hud-left {
 	font-family: 'Roboto Slab', serif;
 	font-size: 2em;
 	position: absolute;
