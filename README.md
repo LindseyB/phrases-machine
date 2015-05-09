@@ -3,6 +3,7 @@ Phrases Machine
 
 Phrases Machine is all about what happens with machine translation. The game is to guess the original phrase from the backtranslated phrase. Most of the idioms used have no direct translation into whatever intermediate language was used. 
 
+Go play: http://lindseyb.github.io/phrases-machine/
 
 **Backtranslation**: English Phrase → Intermediate Language Machine Translation → English Machine Translation
 
