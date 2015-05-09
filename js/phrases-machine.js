@@ -163,7 +163,6 @@ function setNewPhrase() {
 	$('#difficulty').text(phrase.difficulty);
 	$('#hints-display').text(hints);
 	$("#main").text("");
-	$("input").first().focus();
 
 	_.each(phrase.english, function(chr, index){
 		var input = document.createElement("input");
@@ -176,6 +175,8 @@ function setNewPhrase() {
 		}
 		$("#main").append(input);
 	});
+
+	$("input").first().focus();
 
 	$("input").keyup(function(e) {
 		if (e.which == 13) { // enter
