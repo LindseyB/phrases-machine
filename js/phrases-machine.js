@@ -44,7 +44,7 @@ var phrases = [
 	{ english: "Give a Man a Fish", translation: "Give the person who fish", difficulty: 5 },
 	{ english: "Hands Down", translation: "By far", difficulty: 9 },
 	{ english: "Happy as a Clam", translation: "Very happy", difficulty: 10 },
-	{ english: "Head Over Heels", translaton: "upside down", difficulty: 9 },
+	{ english: "Head Over Heels", translation: "upside down", difficulty: 9 },
 	{ english: "Heads Up", translation: "Looked up", difficulty: 5 },
 	{ english: "Hear Hear", translation: "Heard", difficulty: 9 },
 	{ english: "High And Dry", translation: "being stranded on the shore", difficulty: 10 },
