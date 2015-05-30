@@ -189,7 +189,7 @@ function setNewPhrase() {
 			$(element).val("");
 		} else if (e.which == 13) { // enter
 			check_guess();
-		} else {
+		} else if (e.which > 64 && e.which < 91) { // letter
 			// push to next element
 			$(this).val(String.fromCharCode(e.which));
 			var element = $(this).next('input');
